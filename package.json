@@ -1,7 +1,7 @@
 {
   "name": "unique-sequence",
-  "version": "0.0.1",
-  "description": "Generate unique sequences of characters and digits.",
+  "version": "0.0.2",
+  "description": "Generate a sequence of short strings unique within their scope.",
   "main": "src/index.js",
   "repository": {
     "type": "git",

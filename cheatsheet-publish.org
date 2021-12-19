@@ -1,0 +1,25 @@
+* Run tests
+
+  #+begin_src bash :eval never
+    npm run test
+  #+end_src
+
+* Tag and Git push
+
+  + update version in package.json
+  + git commit
+  + git tag
+  + git push
+
+* Publish to npm
+
+  #+begin_src bash :eval never
+    npm login
+    cd ..
+    npm publish unique-sequence
+    # or to submit a beta version:
+    npm publish --tag v2beta.0 unique-sequence
+
+    npm info # view output to visually verify the publish
+
+  #+end_src
