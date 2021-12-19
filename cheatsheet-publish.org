@@ -15,10 +15,10 @@
 
   #+begin_src bash :eval never
     npm login
-    cd ..
-    npm publish unique-sequence
+    npm publish . --dry-run
+    npm publish .
     # or to submit a beta version:
-    npm publish --tag v2beta.0 unique-sequence
+    npm publish --tag v2beta.0 .
 
     npm info # view output to visually verify the publish
 
