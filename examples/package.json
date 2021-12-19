@@ -15,7 +15,7 @@
     "watch-01": "nodemon 01-unique-sequence.js"
   },
   "dependencies": {
-    "unique-sequence": "1.0.0"
+    "unique-sequence": "1.0.2"
   },
   "devDependencies": {
     "nodemon": "^2.0.15"
