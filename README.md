@@ -2,18 +2,73 @@
 
 Generate a sequence of short strings unique within their scope.
 
+The generated strings are **as short as possible**.
+
+Unlike `uuid` they are not universally unique. However a generator does not
+repeat a sequence, making strings unique within the scope of a generator
+instance.
+
 This utility is built using [Node.js](https://nodejs.org/en/about/).
+
+# Introduction
+
+This library was written to generate **short** property names for `JavaScript` objects.
+
+`uuid` is one way of generating property names which would make an object look like:
+
+```js
+{
+  '2bdff0e2-9c4f-4b12-8669-7dac3dbf3203': 1,
+  '7b5c615c-03b2-4bb0-b8ff-995cebeed679': true
+}
+```
+
+In the above, property names `2bdff0e2-9c4f-4b12-8669-7dac3dbf3203`,
+`7b5c615c-03b2-4bb0-b8ff-995cebeed679` are relatively long.
+
+Instead, if you want to generate a **few** and **very short** names such as `a`,
+`b` then this library can help.
+
+# Quick example
 
 ```js
 const { generatorCustom } = require('unique-sequence');
 
-// generate a sequence using elements 'a', 'b'
+// A string generator using 2 characters: 'a' and 'b':
 const gen = generatorCustom(['a', 'b']);
 console.log(gen.next().value); // a
 console.log(gen.next().value); // b
 console.log(gen.next().value); // ba
 console.log(gen.next().value); // bb
+console.log(gen.next().value); // baa
+
+// and so on...
 ```
+
+# How it works
+
+It is similar to a sequence of integers.
+
+For instance, below is a sequence generated using decimal digits `0` to `9`:
+
+```
+0,   1,  2,  3,  4,  5,  6,  7,  8,  9,
+10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
+20, 21, 22, 23, 24, 25, 26, 27, 28, 29,
+30
+```
+
+Below is a sequence using the list of latin alphabets `a` to `j`:
+
+```
+ a,  b,  c,  d,  e,  f,  g,  h,  i,  j,
+ba, bb, bc, bd, be, bf, bg, bh, bi, bj,
+ca, cb, cc, cd, ce, cf, cg, ch, ci, cj,
+da
+```
+
+In a similar manner, this library generates sequences, using a specified list of
+characters (or strings).
 
 # Generators available
 
@@ -23,35 +78,6 @@ console.log(gen.next().value); // bb
 4. generatorAlphaNumUpper
 5. generatorAlphaNumLower
 6. generatorNum
-
-# Introduction
-
-This library generates unique short strings. The generator starts out by
-creating strings of just one character. 
-
-A list of strings are used to generate a sequence of strings similar to the
-sequence of natural numbers or integers.
-
-For instance, below is a sequence of natural numbers generated using the list of
-decimal digits `0` to `9`.
-
-```
-0,   1,  2,  3,  4,  5,  6,  7,  8,  9,
-10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
-20, 21, 22, 23, 24, 25, 26, 27, 28, 29,
-30
-```
-
-Similarly, below is a sequence using the list of latin alphabets `a` to `j`
-
-```
- a,  b,  c,  d,  e,  f,  g,  h,  i,  j,
-ba, bb, bc, bd, be, bf, bg, bh, bi, bj,
-ca, cb, cc, cd, ce, cf, cg, ch, ci, cj,
-da
-```
-
-In a similar manner, this library generates sequences, given a list of strings.
 
 # Getting started
 
@@ -76,7 +102,7 @@ const {
 /* Lets generate a sequence using two elements 'a' and 'b' */
 const list = ['a', 'b'];
 
-// NOTE: list length must be 2 to 36.
+// NOTE: The length of the list should be <=36 and >= 2
 
 const gen2 = generatorCustom(list);
 console.log(gen2.next().value); // a
@@ -253,6 +279,12 @@ console.log(times(generatorCustom([
 
 
 # Change log
+
+## version 1.0.3
+
+2022-01-15
+
++ Improved docs.
 
 ## version 1.0.0
 

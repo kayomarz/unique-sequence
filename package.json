@@ -1,6 +1,6 @@
 {
   "name": "unique-sequence",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Generate a sequence of short strings unique within their scope.",
   "main": "src/index.js",
   "repository": {
