@@ -8,8 +8,8 @@
 
   + update version in package.json
   + git commit
-  + git tag
   + git push
+  + git tag
 
 * Publish to npm
 

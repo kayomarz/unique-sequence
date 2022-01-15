@@ -99,6 +99,44 @@ const {
   generatorAlphaNumLower,
 } = require('unique-sequence');
 
+
+/* Generate a sequence using letters 'a' to 'z' */
+const gen = generatorAlphaLower();
+console.log(gen.next().value); // a
+console.log(gen.next().value); // b
+console.log(gen.next().value); // c
+console.log(gen.next().value); // d
+console.log(gen.next().value); // e
+console.log(gen.next().value); // f
+console.log(gen.next().value); // g
+console.log(gen.next().value); // h
+console.log(gen.next().value); // i
+console.log(gen.next().value); // j
+console.log(gen.next().value); // k
+console.log(gen.next().value); // l
+console.log(gen.next().value); // m
+console.log(gen.next().value); // n
+console.log(gen.next().value); // o
+console.log(gen.next().value); // p
+console.log(gen.next().value); // q
+console.log(gen.next().value); // r
+console.log(gen.next().value); // s
+console.log(gen.next().value); // t
+console.log(gen.next().value); // u
+console.log(gen.next().value); // v
+console.log(gen.next().value); // w
+console.log(gen.next().value); // x
+console.log(gen.next().value); // y
+console.log(gen.next().value); // z
+console.log(gen.next().value); // ba
+console.log(gen.next().value); // bb
+console.log(gen.next().value); // bc
+console.log(gen.next().value); // bd
+console.log(gen.next().value); // be
+console.log(gen.next().value); // bf
+// and so on...
+
+
 /* Lets generate a sequence using two elements 'a' and 'b' */
 const list = ['a', 'b'];
 
