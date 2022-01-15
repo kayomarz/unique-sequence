@@ -318,6 +318,12 @@ console.log(times(generatorCustom([
 
 # Change log
 
+## version 1.0.4
+
+2022-01-15
+
++ Improved docs.
+
 ## version 1.0.3
 
 2022-01-15
